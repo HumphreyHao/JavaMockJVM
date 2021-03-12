@@ -1,6 +1,10 @@
 package geek.path;
 
+import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 import geek.PathEntry;
 
@@ -12,8 +16,12 @@ import geek.PathEntry;
  * @create: 2021-03-11 09:45
  **/
 public class CompositeEntry implements PathEntry {
-    public CompositeEntry(String path) {
-        return;
+
+    private final List<PathEntry> entryList = new ArrayList<>();
+
+    public CompositeEntry(String pathList) {
+        String[] paths = pathList.split(File.pathSeparator);
+        Arrays.stream(paths).forEach(x -> entryList.add(PathEntry.create(x)));
     }
 
     public byte[] readClass(String className) throws IOException {
