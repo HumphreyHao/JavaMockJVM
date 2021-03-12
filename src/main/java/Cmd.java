@@ -1,8 +1,9 @@
+import java.util.List;
+
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
-import lombok.Data;
 
-import java.util.List;
+import lombok.Data;
 
 /**
  * @program: JavaMockJVM
