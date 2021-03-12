@@ -1,3 +1,5 @@
+package geek;
+
 /**
  * @program: JavaMockJVM
  * @description: 启动的主类
